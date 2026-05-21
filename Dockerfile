@@ -26,7 +26,7 @@ RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist
 COPY . .
 RUN composer install --no-dev --optimize-autoloader \
     && APP_KEY=base64:ZGV2ZWxvcG1lbnRrZXlmb3Jkb2NrZXJidWlsZG9ubHl5 \
-    php artisan wayfinder:generate --no-interaction
+    php artisan wayfinder:generate --with-form --no-interaction
 
 # ---- Frontend assets ----
 FROM node:22-bookworm AS frontend

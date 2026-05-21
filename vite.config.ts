@@ -18,7 +18,6 @@ export default defineConfig({
             },
         }),
         tailwindcss(),
-        // wayfinder({ formVariants: true }),
-        // Disabled: requires PHP >= 8.4 (system has 8.2.4). Route files in resources/js/routes/ are pre-generated.
+        wayfinder({ formVariants: true }),
     ],
 });

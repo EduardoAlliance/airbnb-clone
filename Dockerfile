@@ -48,7 +48,7 @@ COPY vite.config.ts tsconfig.json ./
 COPY resources ./resources
 COPY public ./public
 
-RUN npm run build
+RUN DOCKER_BUILD=true npm run build
 
 # ---- Production image ----
 FROM php-base AS production

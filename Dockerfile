@@ -33,9 +33,9 @@ FROM node:22-bookworm AS frontend
 
 WORKDIR /var/www/html
 
-# npm ci evita la política minimumReleaseAge de pnpm 10+ en CI/Docker
-COPY package.json package-lock.json ./
-RUN npm ci
+# npm ci (package-lock.json debe estar en sync con package.json)
+COPY package.json package-lock.json docker/npmrc.build ./
+RUN cp docker/npmrc.build .npmrc && npm ci
 
 COPY --from=vendor /var/www/html/vendor ./vendor
 COPY --from=vendor /var/www/html/resources/js/routes ./resources/js/routes

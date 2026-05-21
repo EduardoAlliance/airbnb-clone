@@ -1,0 +1,3 @@
+# Usado solo en el build de Docker (stage frontend)
+ignore-scripts=false
+engine-strict=false

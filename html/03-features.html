@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Whispering Pines Cabin | Evergreen Retreats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#757870",
+                        "inverse-surface": "#2f312f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#2d1505",
+                        "outline-variant": "#c5c8be",
+                        "primary": "#182413",
+                        "on-primary-fixed-variant": "#3d4b36",
+                        "surface-dim": "#dbdad7",
+                        "tertiary": "#421000",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d8e7cc",
+                        "on-tertiary-container": "#e0896a",
+                        "surface-container-high": "#e9e8e5",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdbc7",
+                        "primary-fixed-dim": "#bccbb1",
+                        "surface-tint": "#54624d",
+                        "secondary-fixed-dim": "#eabda2",
+                        "primary-container": "#2d3a27",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#bccbb1",
+                        "secondary-container": "#ffd1b5",
+                        "on-surface-variant": "#444841",
+                        "on-surface": "#1a1c1a",
+                        "tertiary-container": "#5f240d",
+                        "on-background": "#1a1c1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary-container": "#95a48b",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#7a5742",
+                        "surface-container": "#efeeeb",
+                        "surface-variant": "#e3e2e0",
+                        "background": "#faf9f6",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-bright": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#795741",
+                        "on-primary-fixed": "#131f0e",
+                        "on-tertiary-fixed-variant": "#74331b",
+                        "on-secondary-fixed-variant": "#5f402b",
+                        "surface": "#faf9f6",
+                        "inverse-on-surface": "#f2f1ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Noto Serif"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .shadow-soft { box-shadow: 0 10px 30px -10px rgba(24, 36, 19, 0.15); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<span class="text-headline-sm font-display-lg font-semibold text-primary">Evergreen Retreats</span>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Explore</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-body-md" href="#">My Bookings</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-body-md" href="#">Notifications</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">search</span></button>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-outline-variant hover:shadow-soft transition-all">
+<span class="material-symbols-outlined">menu</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8">
+<!-- Property Header -->
+<div class="mb-8">
+<h1 class="font-display-lg text-[40px] text-primary leading-tight mb-2">Whispering Pines Cabin</h1>
+<div class="flex flex-wrap items-center gap-4 text-label-md text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.92</span>
+<span class="underline">128 reviews</span>
+</div>
+<span>â€¢</span>
+<div class="flex items-center gap-1 underline font-semibold">
+<span>Sedona, Arizona, United States</span>
+</div>
+</div>
+</div>
+<!-- High-End Asymmetric Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[400px] md:h-[560px] rounded-xl overflow-hidden mb-12 shadow-soft">
+<div class="md:col-span-2 md:row-span-2 relative group cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A grand, architectural cabin built with dark reclaimed wood and massive floor-to-ceiling glass windows, nestled among towering snow-capped pine trees during a golden hour sunset. The warm orange light spills from the windows onto the pristine white snow, creating a cozy and luxurious winter atmosphere. The high-end, modern-organic aesthetic is highlighted by the sharp structural lines of the cabin against the soft, untamed forest wilderness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC14JWe9P2BR1DUGP_e953ClWMiT4DiZP4k7BZ1gCGwwptPO_HVc6wkQfy0ft9wNqalqUqRpmo-AXmE8jCgxK5y4p7VY8Zywg9UGd6Tv-bxF7RbtSROSnD1ZMnY_3q2wQAf9AmTn5e7XMpR6MErNOHoCczPTAmLzykIQt51zebtfOy6ltEfs-i1XCnc8II9oOmmaAn5cUJs6hncf67M_2HQtCNUJbeDmUROx7MUZQRYNo-RZbMc-tY-mrNBcXxxwfqif0tvb2XOSQY"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sophisticated interior shot of a cabin living room featuring a massive stone fireplace with a crackling fire. The room is decorated with minimalist wood furniture, plush cream-colored textiles, and soft ambient lighting. Large windows in the background reveal a dense green forest, maintaining the modern-organic theme with a focus on warmth, heritage, and tranquil indoor-outdoor living." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvh90uuTfIAHVsegYNJyNjy19NNKpVmFp8fcxKD7JGNxm0qAo7Vx6DbWsMCuwkfzNMt83W7HHYP6Gk_Ek1X09CcviP4DAFTp72lBNiDvDCTMTPhbsT2eWVmM2IZSbVw0xRLDkZI9Ll0dYIy-Wz90o_XNSDzGHP8kJGTR3L2noEUZdd49ibkHVTMElJ_VVkMpo-IEstbp5y6vxxADMdKiU6XJ42J_JDPL4ayuOpVtVsgq_jc1kBD5WluxepqF9HgaH0ytcxmazqWa-R"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden rounded-tr-xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up detail of a master bedroom in a high-end cabin, featuring a large bed with thick wool blankets and organic cotton linens. The walls are made of warm cedar planks, and a small reading nook sits by a window overlooking a misty morning in the woods. The lighting is soft and natural, emphasizing the feeling of a sophisticated retreat in the wild." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIEQbRJ0o1h4FX66avYMFw12tS9IMTnV0fKDJSCCFjRZnjDFixr5P4ZYHqGyfhSkgAd34uM69p3_r4inqMg8NDzBfoYzzqEMtGhWmA8T7iM_C0sE7z5Fr00-yVGIXco81-FxjBRf7Moru1b7hQ0lqIbblX7RAZ9EAkS0u4EI1gw_M0NAWHKlCaelr1jeHUiI_VPKvmvH1jiNYo6seaL6OMygrsCECdyGqcvo2F8wu3EKpUqfHrLiGPkS4ZamOyXjfo5vqq4S8NLoCK"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="An outdoor perspective of a modern cabin's wooden deck featuring a sleek black hot tub and minimalist outdoor seating. The deck overlooks a vast valley of pine trees under a clear, starry night sky. The scene is illuminated by subtle, warm-toned deck lights, evoking a sense of calm, premium outdoor relaxation and architectural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeIMS2GW8oxIOpFGCjQ0rH8gFyHhtLwcpfCvE57u5v4gZ6jfDpbtMYbw7pCZh-IvN68ysNEKyIHYSYrsI_OydK2AZVWG0gFlqnB5THjMkRl18UeKwpW6tHsPIUtaGPKzRECkbEnfYpaOV4jACCj6Vp63T4pia12FJVMsn_TMYuwp9_kNmWgFZaFfWWSWo5oosqc6SGc8bxPTdp7yqhfxANpvsgSGVOg3Zsn-SmehJdWZD4WTYYEYy8E4r70RaBtKjmTu5DxU_QrFgo"/>
+</div>
+<div class="hidden md:block relative group cursor-pointer overflow-hidden rounded-br-xl">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A breathtaking panoramic view of the rugged mountain landscape surrounding the Evergreen Retreats property. The image shows layers of blue and green mountains under a soft morning mist, with a few rustic cabin rooftops peeking through the canopy. The overall mood is serene and majestic, treating the UI as a transparent window into nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdLjKklHjLnmK3QJ7dYpAb0V2fQDT1PFbCU1izTtthX-ByPae2kh0avXpcmdLXK7vPjFpaE-Ym5KnDxwCsd7GIOVwAjNyeC0IWhw-lKef_mz343LVNT2516gBONSrRsU_6RYsYB-qsjriSvcklujSSo3YUKYb0XnoOStgX-bQERK4_ExBJMWSG40aGJWCtiOVkcnQm9p7iPvtLzzWX2HEgfuWy5IDmiO4horOmj0qD3F9YJPikfgHqIW-6-Aa4LlouXdIv4-pbbx53"/>
+<button class="absolute bottom-6 right-6 bg-surface px-4 py-2 rounded-lg border border-primary flex items-center gap-2 text-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+                    Show all photos
+                </button>
+</div>
+</div>
+<!-- Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 space-y-12">
+<!-- Host & Quick Stats -->
+<section class="flex justify-between items-start border-b border-outline-variant pb-8">
+<div>
+<h2 class="font-headline-md text-primary mb-1">Entire cabin hosted by Julian</h2>
+<p class="text-body-md text-on-surface-variant">6 guests Â· 3 bedrooms Â· 4 beds Â· 2.5 baths</p>
+</div>
+<div class="w-14 h-14 rounded-full bg-surface-container-high overflow-hidden border-2 border-primary-fixed">
+<img alt="Host Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJfieWq1Vro4ZgrEr6zyKrKb99pyTUoIRYneARDGe5Yqyta6QFvZorPnlq1xLGAAKj0ojdrbnAqn8VzGVcH9KX1-MNV7su8zJArPMqod_XoFfbyhsF15eHsmSzK2OL5bMZKoW1Z8nFvHshHYVelKhfahsWBSsQVee7ptIO0Ky69aY8_Oz8gU_25ZNz9LzrkIvuGxwzLhPzywHX9mSpSWAvEu2GP9J3HovdDLIjMx298VkRB7B91SR1UaBpbq-vt1U80HDswH5CM_jA"/>
+</div>
+</section>
+<!-- Experience Features -->
+<section class="space-y-6 border-b border-outline-variant pb-8">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-secondary text-[28px]">workspace_premium</span>
+<div>
+<p class="font-bold text-on-surface">Julian is a Superhost</p>
+<p class="text-on-surface-variant text-body-md">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-secondary text-[28px]">location_on</span>
+<div>
+<p class="font-bold text-on-surface">Great location</p>
+<p class="text-on-surface-variant text-body-md">100% of recent guests gave the location a 5-star rating.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-secondary text-[28px]">calendar_today</span>
+<div>
+<p class="font-bold text-on-surface">Free cancellation for 48 hours</p>
+</div>
+</div>
+</section>
+<!-- Description -->
+<section class="border-b border-outline-variant pb-12">
+<p class="text-body-lg text-on-surface leading-[1.8] mb-6">
+                        Welcome to Whispering Pines, a masterfully designed retreat where the wild heart of the Arizona desert meets the refined comfort of a modern timber cabin. Nestled on five private acres of rugged terrain, this sanctuary offers panoramic views of Sedona's iconic red rocks and the dense canopy of the Coconino National Forest.
+                    </p>
+<p class="text-body-lg text-on-surface leading-[1.8] mb-8">
+                        The cabin features hand-hewn cedar beams, custom ironwork, and floor-to-ceiling glass walls that invite the great outdoors inside. Whether you're sipping locally roasted coffee on the wraparound deck or unwinding by the massive stone hearth, every detail is crafted to evoke a sense of heritage and tranquility.
+                    </p>
+<button class="flex items-center gap-1 font-bold text-primary underline underline-offset-4">
+                        Show more <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</section>
+<!-- Amenities: Bento Grid Style -->
+<section>
+<h3 class="font-headline-sm text-primary mb-8">What this place offers</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">wifi</span>
+<span class="text-body-md font-medium text-on-surface">Fast Wi-Fi (250 Mbps)</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">fireplace</span>
+<span class="text-body-md font-medium text-on-surface">Indoor Fireplace</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">cooking</span>
+<span class="text-body-md font-medium text-on-surface">Chef's Kitchen</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">local_parking</span>
+<span class="text-body-md font-medium text-on-surface">Free parking on premises</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">ac_unit</span>
+<span class="text-body-md font-medium text-on-surface">Central air conditioning</span>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-xl bg-surface-container-low border border-transparent hover:border-outline-variant transition-all">
+<span class="material-symbols-outlined text-primary text-[24px]">hot_tub</span>
+<span class="text-body-md font-medium text-on-surface">Private Hot Tub</span>
+</div>
+</div>
+<button class="mt-8 px-6 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-surface-container-high transition-colors">
+                        Show all 45 amenities
+                    </button>
+</section>
+</div>
+<!-- Right Column: Booking Widget -->
+<div class="lg:col-span-1">
+<div class="sticky top-[112px] bg-white rounded-2xl p-6 border border-outline-variant shadow-soft">
+<div class="flex justify-between items-baseline mb-6">
+<div>
+<span class="text-headline-sm font-bold text-primary">$450</span>
+<span class="text-on-surface-variant text-body-md"> / night</span>
+</div>
+<div class="flex items-center gap-1 text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.92</span>
+<span class="text-outline">Â· 128 reviews</span>
+</div>
+</div>
+<!-- Date Selection UI -->
+<div class="border border-outline-variant rounded-xl overflow-hidden mb-6">
+<div class="grid grid-cols-2 border-b border-outline-variant">
+<div class="p-3 border-r border-outline-variant cursor-pointer hover:bg-surface-container-low">
+<label class="block text-[10px] font-bold uppercase tracking-wider text-primary">Check-in</label>
+<span class="text-body-md text-on-surface">Dec 14, 2024</span>
+</div>
+<div class="p-3 cursor-pointer bg-primary-container/10">
+<label class="block text-[10px] font-bold uppercase tracking-wider text-primary">Check-out</label>
+<span class="text-body-md text-on-surface font-semibold">Dec 19, 2024</span>
+</div>
+</div>
+<div class="p-3 cursor-pointer hover:bg-surface-container-low">
+<label class="block text-[10px] font-bold uppercase tracking-wider text-primary">Guests</label>
+<span class="text-body-md text-on-surface">2 guests</span>
+</div>
+</div>
+<!-- Simplified Interactive Calendar Visual -->
+<div class="mb-6 p-4 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-center mb-4">
+<span class="font-bold text-primary">December 2024</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">chevron_left</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-[11px] mb-2 font-bold text-outline">
+<span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-label-sm">
+<!-- Placeholder Calendar Days -->
+<span class="py-2 text-outline">1</span>
+<span class="py-2 text-outline">2</span>
+<span class="py-2 text-outline line-through opacity-30">3</span>
+<span class="py-2 text-outline line-through opacity-30">4</span>
+<span class="py-2 text-outline">5</span>
+<span class="py-2 text-outline">6</span>
+<span class="py-2 text-outline">7</span>
+<span class="py-2">8</span><span class="py-2">9</span><span class="py-2">10</span><span class="py-2">11</span><span class="py-2">12</span><span class="py-2">13</span>
+<span class="py-2 bg-primary text-white rounded-full font-bold">14</span>
+<span class="py-2 bg-primary-fixed text-primary">15</span>
+<span class="py-2 bg-primary-fixed text-primary">16</span>
+<span class="py-2 bg-primary-fixed text-primary">17</span>
+<span class="py-2 bg-primary-fixed text-primary">18</span>
+<span class="py-2 bg-primary text-white rounded-full font-bold">19</span>
+<span class="py-2">20</span><span class="py-2">21</span><span class="py-2">22</span><span class="py-2">23</span><span class="py-2">24</span><span class="py-2">25</span><span class="py-2">26</span><span class="py-2">27</span><span class="py-2">28</span><span class="py-2">29</span><span class="py-2">30</span><span class="py-2">31</span>
+</div>
+</div>
+<!-- Reserve Button -->
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl shadow-soft hover:bg-primary-container transition-all active:scale-95 mb-4">
+                        Reserve Now
+                    </button>
+<p class="text-center text-label-sm text-on-surface-variant mb-6">You won't be charged yet</p>
+<!-- Price Breakdown -->
+<div class="space-y-3 mb-6">
+<div class="flex justify-between text-body-md">
+<span class="underline">$450 x 5 nights</span>
+<span>$2,250</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="underline">Cleaning fee</span>
+<span>$150</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="underline">Evergreen service fee</span>
+<span>$312</span>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant flex justify-between font-bold text-body-lg text-primary">
+<span>Total before taxes</span>
+<span>$2,712</span>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center gap-4 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span class="underline">Report this listing</span>
+</div>
+</div>
+</div>
+<!-- Location Section -->
+<section class="mt-20 border-t border-outline-variant pt-12">
+<h3 class="font-headline-md text-primary mb-6">Where you'll be</h3>
+<div class="w-full h-[480px] rounded-2xl overflow-hidden shadow-soft relative">
+<img class="w-full h-full object-cover" data-alt="A stylized, architectural map view showing a remote cabin location in the Sedona desert. The map features minimalist topographic lines in wood brown tones and a dark green forest primary color palette. A single, elegant copper pin marks the cabin's location amidst the red rock canyons and dense pine forests, perfectly embodying the Evergreen Retreats brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOwPDWnPOFnnQdkQDZm5Sd5FSppZp83Qd09FTunazO8jrqdosIXRXgv2QCz6_lLeLcYUEwQzKtXAc6NWkVVaSiyYgLMcx8MCrr7ctsVv5dsBcc3VTfiXw_RwibyKhhp1w5mo_luQNvHrNYji2p9CdM140ahf4PbKklOgjduFdtgBCUe6VduvocJlviAtw_Apbghk1jXKaIrtcgq66xB_9O5oxsCaJ4Qi-bfvBLetDuGQ5F-sWZ91FZc7tCfpEbqTMFMpJmLUgIVbwR"/>
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<!-- Custom Map Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary text-white p-3 rounded-full shadow-lg border-2 border-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">house</span>
+</div>
+<div class="bg-white px-3 py-1 rounded-lg mt-2 shadow-sm border border-outline-variant text-label-sm font-bold">Whispering Pines</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-bold text-primary mb-2">Sedona, Arizona, United States</h4>
+<p class="text-body-md text-on-surface-variant max-w-3xl leading-relaxed">
+                    The property is located in a secluded canyon on the edge of the Coconino National Forest. While you'll feel completely isolated, the vibrant shops and galleries of Sedona are only a 20-minute scenic drive away. Perfect for star-gazing and direct trail access.
+                </p>
+<button class="mt-4 flex items-center gap-1 font-bold text-primary underline underline-offset-4">
+                    Show more <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max mx-auto">
+<div class="mb-4 md:mb-0">
+<span class="font-display-lg text-headline-sm text-primary">Evergreen Retreats</span>
+<p class="text-label-sm text-on-surface-variant mt-1">Â© 2024 Evergreen Retreats. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant text-label-sm hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant text-label-sm hover:text-secondary transition-colors" href="#">Sustainability</a>
+<a class="text-on-surface-variant text-label-sm hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-label-sm hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant text-label-sm hover:text-secondary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-4 mt-4 md:mt-0">
+<span class="material-symbols-outlined text-primary cursor-pointer">language</span>
+<span class="font-bold text-label-sm text-primary">English (US)</span>
+<span class="font-bold text-label-sm text-primary">$ USD</span>
+</div>
+</div>
+</footer>
+</body></html>

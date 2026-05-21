@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timber & Moss — Forestry Cabin Rentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pine: #0f1a12;
+      --moss: #1e2f23;
+      --bark: #2c1810;
+      --amber: #e8a84c;
+      --ember: #d4742a;
+      --glow: #fce6b4;
+      --smoke: #c8c0b6;
+      --linen: #efe6d8;
+      --charcoal: #0a0e0c;
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-edge: rgba(255, 255, 255, 0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--charcoal);
+      color: var(--linen);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--charcoal); }
+    ::-webkit-scrollbar-thumb { background: var(--moss); border-radius: 3px; }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(10,14,12,0.95) 0%, rgba(10,14,12,0.5) 80%, transparent 100%);
+      backdrop-filter: blur(12px);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--glow);
+      letter-spacing: 0.02em;
+    }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--smoke);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--amber);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover { color: var(--glow); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--amber);
+      color: var(--charcoal) !important;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      transition: background 0.3s, box-shadow 0.3s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--ember) !important; color: var(--charcoal) !important; box-shadow: 0 0 30px rgba(232,168,76,0.3); }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 2rem 4rem;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg .layer {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-bg .layer-1 {
+      background: radial-gradient(ellipse 80% 60% at 50% 20%, #1a2f1e 0%, #0a0e0c 70%);
+    }
+    .hero-bg .layer-2 {
+      background: radial-gradient(ellipse 120% 40% at 30% 80%, rgba(232,168,76,0.08) 0%, transparent 60%);
+    }
+    .hero-bg .layer-3 {
+      background:
+        radial-gradient(1.5px 1.5px at 20% 30%, rgba(252,230,180,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 45% 22%, rgba(252,230,180,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 35%, rgba(252,230,180,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 15% 55%, rgba(252,230,180,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 60%, rgba(252,230,180,0.4) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 20%, rgba(252,230,180,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 70%, rgba(252,230,180,0.5) 0%, transparent 100%);
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    .hero-trees {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40vh;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-trees svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid rgba(232,168,76,0.3);
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeUp 1s 0.2s both;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 1s 0.4s both;
+    }
+    .hero h1 span { color: var(--amber); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--smoke);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      animation: fadeUp 1s 0.6s both;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 1s 0.8s both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: var(--amber);
+      color: var(--charcoal);
+    }
+    .btn-primary:hover {
+      background: var(--ember);
+      box-shadow: 0 0 40px rgba(232,168,76,0.25);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--linen);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-secondary:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 6rem 2rem;
+      position: relative;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--smoke);
+      max-width: 520px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cabins {
+      background: linear-gradient(180deg, var(--charcoal) 0%, var(--pine) 100%);
+    }
+    .cabins-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .cabins-header .section-sub { margin: 0 auto; }
+    .cabin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .cabin-card {
+      background: var(--glass);
+      border: 1px solid var(--glass-edge);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
+      position: relative;
+    }
+    .cabin-card:hover {
+      border-color: rgba(232,168,76,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(232,168,76,0.05);
+    }
+    .cabin-card-image {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background: var(--moss);
+    }
+    .cabin-card-image .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cabin-card-image .placeholder svg { width: 100%; height: 100%; }
+    .cabin-card-image .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(10,14,12,0.9) 100%);
+    }
+    .cabin-card-image .price-tag {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(10,14,12,0.8);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--amber);
+    }
+    .cabin-card-body {
+      padding: 1.5rem;
+    }
+    .cabin-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .cabin-card-body .location {
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .cabin-card-body p {
+      font-size: 0.9rem;
+      color: var(--smoke);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .cabin-card-body .features {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .cabin-card-body .features span {
+      font-size: 0.75rem;
+      color: var(--smoke);
+      background: rgba(255,255,255,0.04);
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .experiences {
+      background: var(--pine);
+    }
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .exp-card {
+      padding: 2rem;
+      background: var(--glass);
+      border: 1px solid var(--glass-edge);
+      border-radius: 8px;
+      transition: all 0.4s;
+    }
+    .exp-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(232,168,76,0.2);
+      transform: translateY(-3px);
+    }
+    .exp-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .exp-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .exp-card p {
+      font-size: 0.85rem;
+      color: var(--smoke);
+      line-height: 1.7;
+    }
+
+    .testimonials {
+      background: var(--charcoal);
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .testimonial {
+      padding: 2rem;
+      border-left: 2px solid var(--amber);
+      background: var(--glass);
+      border-radius: 0 8px 8px 0;
+    }
+    .testimonial .quote {
+      font-style: italic;
+      color: var(--smoke);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial .author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .testimonial .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--moss);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--amber);
+      font-size: 0.85rem;
+    }
+    .testimonial .author-info strong {
+      font-size: 0.85rem;
+      display: block;
+    }
+    .testimonial .author-info span {
+      font-size: 0.75rem;
+      color: var(--smoke);
+    }
+
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(180deg, var(--pine) 0%, var(--charcoal) 100%);
+      padding: 8rem 2rem;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+    .cta-section h2 span { color: var(--amber); }
+    .cta-section p {
+      color: var(--smoke);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+    }
+    .cta-section .btn { font-size: 1rem; padding: 1rem 2.5rem; }
+
+    footer {
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    footer .container {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 3rem;
+    }
+    footer h5 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--glow);
+    }
+    footer p {
+      font-size: 0.85rem;
+      color: var(--smoke);
+      line-height: 1.7;
+    }
+    footer a {
+      display: block;
+      color: var(--smoke);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 0.6rem;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--amber); }
+    .footer-bottom {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.75rem; }
+      .nav-links .nav-cta { padding: 0.4rem 1rem; font-size: 0.75rem; }
+      .cabin-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      footer .container { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      section { padding: 4rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      footer .container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+
+<nav>
+  <div class="logo">Timber<span> &amp;</span> Moss</div>
+  <div class="nav-links">
+    <a href="#cabins">Cabins</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#testimonials">Stories</a>
+    <a href="#book" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="layer layer-1"></div>
+    <div class="layer layer-2"></div>
+    <div class="layer layer-3"></div>
+  </div>
+  <div class="hero-trees">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice">
+      <path d="M0 400 L0 200 Q90 80 180 180 Q270 40 360 140 Q450 20 540 120 Q630 0 720 100 Q810 20 900 120 Q990 40 1080 140 Q1170 80 1260 180 Q1350 40 1440 140 L1440 400 Z" fill="rgba(15,26,18,0.6)"/>
+      <path d="M0 400 L0 240 Q100 120 200 200 Q300 80 400 160 Q500 40 600 120 Q700 20 800 100 Q900 40 1000 140 Q1100 80 1200 180 Q1300 100 1440 180 L1440 400 Z" fill="rgba(30,47,35,0.4)"/>
+      <path d="M0 400 L0 280 Q80 180 160 240 Q240 120 320 200 Q400 80 480 160 Q560 60 640 140 Q720 100 800 160 Q880 80 960 160 Q1040 100 1120 180 Q1200 120 1280 200 Q1360 160 1440 220 L1440 400 Z" fill="rgba(15,26,18,0.8)"/>
+      <rect x="0" y="380" width="1440" height="20" fill="var(--charcoal)"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Deep in the ancient woods</div>
+    <h1>Find your<br><span>cabin</span> in the forest</h1>
+    <p>Hand-selected cabins nestled in old-growth forests. Wake to the sound of streams, sleep under a canopy of stars, and reconnect with the wild.</p>
+    <div class="hero-actions">
+      <a href="#cabins" class="btn btn-primary">Explore Cabins</a>
+      <a href="#experiences" class="btn btn-secondary">See Experiences</a>
+    </div>
+  </div>
+</section>
+
+<section class="cabins" id="cabins">
+  <div class="container">
+    <div class="cabins-header">
+      <div class="section-label">Our Cabins</div>
+      <h2 class="section-title">Handpicked retreats</h2>
+      <p class="section-sub">Each cabin is carefully selected for its seclusion, character, and connection to the surrounding wilderness.</p>
+    </div>
+    <div class="cabin-grid">
+      <div class="cabin-card">
+        <div class="cabin-card-image">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><rect width="400" height="220" fill="#1e2f23"/><ellipse cx="120" cy="220" rx="160" ry="100" fill="#2a4535" opacity="0.5"/><ellipse cx="300" cy="240" rx="180" ry="120" fill="#1a2f1e" opacity="0.4"/><rect x="150" y="70" width="100" height="80" rx="2" fill="#2c1810"/><rect x="160" y="90" width="30" height="30" fill="#e8a84c" opacity="0.3"/><rect x="210" y="90" width="30" height="30" fill="#e8a84c" opacity="0.2"/><rect x="150" y="130" width="100" height="20" fill="#1a0f0a"/><polygon points="150,70 200,40 250,70" fill="#3a2218"/></svg>
+          </div>
+          <div class="overlay"></div>
+          <div class="price-tag">$280 / night</div>
+        </div>
+        <div class="cabin-card-body">
+          <h3>Blackwood Lodge</h3>
+          <div class="location">Olympic National Forest, WA</div>
+          <p>A restored timber-framed lodge with a stone fireplace, deep soaking tub, and wraparound porch overlooking ancient cedar groves.</p>
+          <div class="features">
+            <span>2 beds</span>
+            <span>Fireplace</span>
+            <span>Hot tub</span>
+            <span>Trail access</span>
+          </div>
+        </div>
+      </div>
+      <div class="cabin-card">
+        <div class="cabin-card-image">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><rect width="400" height="220" fill="#1e2f23"/><ellipse cx="80" cy="230" rx="180" ry="110" fill="#2a4535" opacity="0.4"/><ellipse cx="320" cy="230" rx="140" ry="90" fill="#1a2f1e" opacity="0.5"/><rect x="160" y="80" width="80" height="70" rx="2" fill="#2c1810"/><rect x="170" y="95" width="25" height="25" fill="#e8a84c" opacity="0.3"/><rect x="205" y="95" width="25" height="25" fill="#e8a84c" opacity="0.2"/><polygon points="160,80 200,50 240,80" fill="#3a2218"/><circle cx="200" cy="190" r="12" fill="#4a6b50" opacity="0.6"/><circle cx="220" cy="185" r="8" fill="#4a6b50" opacity="0.4"/></svg>
+          </div>
+          <div class="overlay"></div>
+          <div class="price-tag">$195 / night</div>
+        </div>
+        <div class="cabin-card-body">
+          <h3>Hemlock Haven</h3>
+          <div class="location">White Mountain National Forest, NH</div>
+          <p>A modern A-frame perched beside a trout stream. Floor-to-ceiling windows frame the forest canopy and star-filled night skies.</p>
+          <div class="features">
+            <span>1 bed</span>
+            <span>Loft</span>
+            <span>Stream access</span>
+            <span>Fire pit</span>
+          </div>
+        </div>
+      </div>
+      <div class="cabin-card">
+        <div class="cabin-card-image">
+          <div class="placeholder">
+            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice"><rect width="400" height="220" fill="#1e2f23"/><ellipse cx="200" cy="230" rx="220" ry="120" fill="#2a4535" opacity="0.5"/><rect x="170" y="60" width="60" height="60" rx="2" fill="#2c1810"/><rect x="175" y="70" width="20" height="20" fill="#e8a84c" opacity="0.25"/><rect x="205" y="70" width="20" height="20" fill="#e8a84c" opacity="0.15"/><rect x="170" y="105" width="60" height="15" fill="#1a0f0a"/><polygon points="170,60 200,30 230,60" fill="#3a2218"/><circle cx="130" cy="120" r="30" fill="#2a4535" opacity="0.3"/><circle cx="270" cy="130" r="25" fill="#1a2f1e" opacity="0.4"/></svg>
+          </div>
+          <div class="overlay"></div>
+          <div class="price-tag">$350 / night</div>
+        </div>
+        <div class="cabin-card-body">
+          <h3>Old Pine Keep</h3>
+          <div class="location">Siuslaw National Forest, OR</div>
+          <p>A secluded cedar cabin built in 1923, restored with modern comforts. Cathedral ceilings, a wood-burning stove, and miles of trails.</p>
+          <div class="features">
+            <span>3 beds</span>
+            <span>Wood stove</span>
+            <span>Full kitchen</span>
+            <span>Forest views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experiences" id="experiences">
+  <div class="container">
+    <div class="cabins-header">
+      <div class="section-label">Curated Experiences</div>
+      <h2 class="section-title">Beyond the cabin</h2>
+      <p class="section-sub">Every stay includes access to handcrafted experiences that deepen your connection to the land.</p>
+    </div>
+    <div class="experiences-grid">
+      <div class="exp-card">
+        <span class="icon">🌲</span>
+        <h4>Guided Forest Bathing</h4>
+        <p>Slow, mindful walks through old-growth stands led by certified forest therapy guides. Rediscover the art of noticing.</p>
+      </div>
+      <div class="exp-card">
+        <span class="icon">🔥</span>
+        <h4>Fire &amp; Supper</h4>
+        <p>An evening meal cooked over an open flame by local foragers. Wild mushrooms, cedar-planked fish, and stories by firelight.</p>
+      </div>
+      <div class="exp-card">
+        <span class="icon">🌌</span>
+        <h4>Dark Sky Nights</h4>
+        <p>Our cabins sit in certified dark-sky zones. Telescopes provided, no light pollution for miles. The Milky Way, uninterrupted.</p>
+      </div>
+      <div class="exp-card">
+        <span class="icon">🪵</span>
+        <h4>Timbercraft Workshop</h4>
+        <p>Learn traditional joinery and carving from master woodworkers. Take home something you built with your own hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="cabins-header">
+      <div class="section-label">Guest Stories</div>
+      <h2 class="section-title">Whispers from the woods</h2>
+      <p class="section-sub">The forest changes you. Here&rsquo;s what our guests carry home.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="quote">&ldquo;We arrived stressed and left transformed. Blackwood Lodge wrapped us in silence and slowness. No Wi-Fi, just the sound of rain on the roof and a fireplace that crackled all night. We didn&rsquo;t want to leave.&rdquo;</div>
+        <div class="author">
+          <div class="author-avatar">E</div>
+          <div class="author-info">
+            <strong>Elena V.</strong>
+            <span>Blackwood Lodge &middot; 3 nights</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">&ldquo;The Hemlock Haven A-frame is a masterpiece of simplicity. We spent the whole weekend reading by the window, watching the light shift through the pines. The stream is loud enough to drown out every thought. Perfect.&rdquo;</div>
+        <div class="author">
+          <div class="author-avatar">M</div>
+          <div class="author-info">
+            <strong>Marcus T.</strong>
+            <span>Hemlock Haven &middot; Weekend stay</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="quote">"Old Pine Keep feels like time travel. The beams are hand-hewn, the floors slope gently, and the forest presses in close from every window. We saw a pair of owls hunting at dusk. Unforgettable."</div>
+        <div class="author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <strong>Sofia &amp; James</strong>
+            <span>Old Pine Keep &middot; 5 nights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="book">
+  <h2>Your fire awaits <span>in the trees</span></h2>
+  <p>Book a cabin and step away from the noise. The forest has been waiting for you.</p>
+  <a href="#" class="btn btn-primary">Check Availability</a>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <div class="logo" style="margin-bottom:1rem;">Timber<span> &amp;</span> Moss</div>
+      <p>Curating unforgettable stays in the world&rsquo;s most beautiful forests since 2018. Every booking supports local conservation efforts.</p>
+    </div>
+    <div>
+      <h5>Cabins</h5>
+      <a href="#">Blackwood Lodge</a>
+      <a href="#">Hemlock Haven</a>
+      <a href="#">Old Pine Keep</a>
+      <a href="#">All cabins</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="#">Our story</a>
+      <a href="#">Conservation</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div>
+      <h5>Support</h5>
+      <a href="#">Contact</a>
+      <a href="#">FAQs</a>
+      <a href="#">Cancellation policy</a>
+      <a href="#">Accessibility</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Timber &amp; Moss. All rights reserved. Made with care for the wild.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

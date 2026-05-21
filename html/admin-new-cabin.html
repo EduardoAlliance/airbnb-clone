@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evergreen Retreats - Admin Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#757870",
+                      "inverse-surface": "#2f312f",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#2d1505",
+                      "outline-variant": "#c5c8be",
+                      "primary": "#182413",
+                      "on-primary-fixed-variant": "#3d4b36",
+                      "surface-dim": "#dbdad7",
+                      "tertiary": "#421000",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#d8e7cc",
+                      "on-tertiary-container": "#e0896a",
+                      "surface-container-high": "#e9e8e5",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#ffdbc7",
+                      "primary-fixed-dim": "#bccbb1",
+                      "surface-tint": "#54624d",
+                      "secondary-fixed-dim": "#eabda2",
+                      "primary-container": "#2d3a27",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#bccbb1",
+                      "secondary-container": "#ffd1b5",
+                      "on-surface-variant": "#444841",
+                      "on-surface": "#1a1c1a",
+                      "tertiary-container": "#5f240d",
+                      "on-background": "#1a1c1a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffdbcf",
+                      "surface-container-low": "#f4f3f1",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-primary-container": "#95a48b",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#7a5742",
+                      "surface-container": "#efeeeb",
+                      "surface-variant": "#e3e2e0",
+                      "background": "#faf9f6",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e3e2e0",
+                      "surface-bright": "#faf9f6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#795741",
+                      "on-primary-fixed": "#131f0e",
+                      "on-tertiary-fixed-variant": "#74331b",
+                      "on-secondary-fixed-variant": "#5f402b",
+                      "surface": "#faf9f6",
+                      "inverse-on-surface": "#f2f1ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Noto Serif"],
+                      "display-lg-mobile": ["Noto Serif"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-sm": ["Noto Serif"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Noto Serif"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft {
+            box-shadow: 0 10px 30px -10px rgba(24, 36, 19, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="flex flex-col h-screen p-unit space-y-2 docked left-0 h-full w-64 bg-surface-container-low border-r border-outline-variant">
+<div class="px-4 py-6">
+<h1 class="text-label-md font-display-lg text-primary">Admin Portal</h1>
+<p class="text-label-sm text-on-surface-variant">Evergreen Management</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-lg font-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Active Tab: Properties -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold transition-transform duration-200 translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="house">house</span>
+<span>Properties</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-lg font-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Reservations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-lg font-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-lg font-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant pt-gutter">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed overflow-hidden">
+<img alt="Admin User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRN3JwXkVR3rmKERFUWgJN5KFqT0NiqLKdKYHu3rZWiJ89PV1VBx7PGQarOXbIHkY50co3duAY7LLXmDD9kmVqKeWQEfe8aQIKtk1TQY4RnjUteUkgrJVTVn6R1JZzXY9DqoJh3NS1X0SvNrFv0tsEpGp0onNZyVEMUekfQTRoF_gfotm7MjxlTdI9PNOiH0gJ0d26z4_vPaTBRNDor-x6UQPkRdA2tW8qSv0M0L3jqJIBOMzu3105IAJcoJF7qp9zTaJMSBxmCdYk"/>
+</div>
+<div>
+<p class="text-label-md text-on-surface font-semibold">Admin User</p>
+<p class="text-label-sm text-on-surface-variant">Property Manager</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-margin-desktop overflow-y-auto">
+<header class="mb-12">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary mb-2">Cabin Management</h2>
+<p class="text-body-lg text-on-surface-variant">Manage your wilderness retreats and cabin listings.</p>
+</div>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Add New Cabin Form Section -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl shadow-soft p-gutter">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">Add New Cabin</h3>
+<span class="material-symbols-outlined text-outline" data-icon="edit_note">edit_note</span>
+</div>
+<form class="space-y-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface-variant font-medium block">Cabin Name</label>
+<input class="w-full border-0 border-b border-outline-variant focus:border-primary focus:ring-0 bg-transparent py-2 px-0 text-body-md placeholder:text-outline-variant" placeholder="e.g. Whispering Pines A-Frame" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface-variant font-medium block">Base Price (Per Night)</label>
+<div class="relative">
+<span class="absolute left-0 top-2 text-on-surface-variant">$</span>
+<input class="w-full border-0 border-b border-outline-variant focus:border-primary focus:ring-0 bg-transparent py-2 pl-4 text-body-md placeholder:text-outline-variant" placeholder="250" type="number"/>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface-variant font-medium block">Address</label>
+<input class="w-full border-0 border-b border-outline-variant focus:border-primary focus:ring-0 bg-transparent py-2 px-0 text-body-md placeholder:text-outline-variant" placeholder="123 Wilderness Way, Cascade Mountains, WA" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface-variant font-medium block">Description</label>
+<textarea class="w-full border-0 border-b border-outline-variant focus:border-primary focus:ring-0 bg-transparent py-2 px-0 text-body-md placeholder:text-outline-variant resize-none" placeholder="Describe the unique atmosphere and amenities of the cabin..." rows="4"></textarea>
+</div>
+<div class="space-y-4">
+<label class="text-label-sm text-on-surface-variant font-medium block">Amenities</label>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Hot Tub</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Fireplace</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Wi-Fi</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Kitchen</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Pet Friendly</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Lake Access</span>
+</label>
+</div>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="bg-primary text-on-primary px-margin-mobile py-unit rounded-lg font-label-md hover:opacity-90 transition-all flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                                Add New Cabin
+                            </button>
+</div>
+</form>
+</section>
+<!-- Photo Upload / Side Area -->
+<section class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-highest rounded-xl p-gutter border border-dashed border-outline-variant flex flex-col items-center justify-center min-h-[300px] text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="cloud_upload">cloud_upload</span>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Upload Photos</h4>
+<p class="text-label-sm text-on-surface-variant px-4">High-resolution nature photography works best for our wilderness aesthetic.</p>
+<button class="mt-6 border border-primary text-primary px-gutter py-2 rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">Select Files</button>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-gutter relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-sm text-headline-sm mb-2">Inventory Status</h4>
+<div class="flex items-end gap-2 mb-4">
+<span class="text-4xl font-display-lg">12</span>
+<span class="text-label-md mb-2 opacity-80">Total Cabins</span>
+</div>
+<div class="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed w-[85%] h-full"></div>
+</div>
+<p class="text-label-sm mt-2 opacity-80">85% Occupancy this month</p>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-white/5 text-[120px]" data-icon="forest">forest</span>
+</div>
+</section>
+<!-- Current Cabins List -->
+<section class="col-span-12 bg-surface-container-low rounded-xl p-gutter">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">Active Listings</h3>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface rounded-full border-outline-variant text-body-md w-64 focus:ring-primary focus:border-primary" placeholder="Search cabins..." type="text"/>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-4">
+<thead>
+<tr class="text-label-sm text-outline uppercase tracking-widest">
+<th class="pb-2 pl-4">Cabin</th>
+<th class="pb-2">Location</th>
+<th class="pb-2 text-center">Status</th>
+<th class="pb-2">Base Price</th>
+<th class="pb-2 text-right pr-4">Actions</th>
+</tr>
+</thead>
+<tbody>
+<!-- Cabin Row 1 -->
+<tr class="bg-surface-container-lowest shadow-sm hover:shadow-soft transition-all group">
+<td class="py-4 pl-4 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-16 h-12 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cozy wooden A-frame cabin nestled deep in a snowy forest, with warm golden light spilling out from large glass windows. The architecture is modern-minimalist but rustic, featuring dark wood planks and a steep pitched roof. The atmosphere is quiet, serene, and wintery, emphasizing high-end comfort in the wild." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVViLyfntZyQC4WUvzJCtXGSQZQ-m6-vtEkPbKvBQPDArikz2RkyX6DaLR2kdXToZZbvW4rUyy6KxyLdpEd1De_iBDhxtbEv81aY4MozarSz7f4uCI_8EdV9QsLA3EfBHDVAzgBxAlr_m9nQW0l0uF_TdQViAbLo4xf50g_pTJ4g8rxSAbgiaXyDwyUHE9nIUPyPRx_S7x0RKP-8pShO8qITbgzbaSFfFxcQ7Guoka9NwuskJJ-eBzAX1oIVJPHP3wsOQGQD8X-7sj"/>
+</div>
+<div>
+<p class="text-body-md font-semibold text-primary">Emerald Peak Lodge</p>
+<p class="text-label-sm text-on-surface-variant">4 Guests â€¢ 2 Bed â€¢ 1 Bath</p>
+</div>
+</div>
+</td>
+<td class="py-4 text-body-md text-on-surface-variant">Mount Rainier, WA</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-label-sm">Active</span>
+</td>
+<td class="py-4 font-semibold text-primary">$340 / night</td>
+<td class="py-4 text-right pr-4 rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cabin Row 2 -->
+<tr class="bg-surface-container-lowest shadow-sm hover:shadow-soft transition-all group">
+<td class="py-4 pl-4 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-16 h-12 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern Scandinavian-style cabin with large vertical timber slats and massive panoramic windows looking out over a misty pine valley. The lighting is soft and overcast, creating a peaceful and sophisticated mood. The structure is elevated on a stone foundation, blending seamlessly into the rugged cliffside terrain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4DGLqu8-4GCcMONKKxomD9ZCF0e0oPFrgxJl-HGXbrFLOL30Ex3PwGMq8g8RyjvlO8dH5gDyERW1a3bYF1anP5YAzaqIF4rpz8PmMXp2JJm0UxJ_UGb9atKIMyqPj9QTxpi0zvxV93VBFtWxXkfmZQBorbX63miCj_rzcgY2BdQiLdoYdKdkveWzgkCw3fDVJWawlnxl-cuoUBjA2ytY9VkwflE2YavXIZ6N8uiGcLltNvATXX26F-AMk6agLxRKTNANRwXVqRbDl"/>
+</div>
+<div>
+<p class="text-body-md font-semibold text-primary">Mistwood Retreat</p>
+<p class="text-label-sm text-on-surface-variant">2 Guests â€¢ 1 Bed â€¢ 1 Bath</p>
+</div>
+</div>
+</td>
+<td class="py-4 text-body-md text-on-surface-variant">Olympic National Park, WA</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-label-sm">Active</span>
+</td>
+<td class="py-4 font-semibold text-primary">$210 / night</td>
+<td class="py-4 text-right pr-4 rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Cabin Row 3 -->
+<tr class="bg-surface-container-lowest shadow-sm hover:shadow-soft transition-all group">
+<td class="py-4 pl-4 rounded-l-xl">
+<div class="flex items-center gap-4">
+<div class="w-16 h-12 rounded-lg bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A secluded luxury cabin set beside a crystal-clear mountain lake, reflecting the golden hues of a late afternoon sunset. The design features warm cedar wood and industrial steel accents. Tall pine trees frame the composition, and the air feels crisp and refreshing, showcasing the ultimate intersection of nature and high-end architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm69dmZnfcwnhjACdA1cfoqQQlTP_J-jqH1GOKM_kOmuxwHseG5RV7pP1hRJ3PS6Kor6G7iaMSZt0N7vaHlVZjiZvkJGLqI5UXvbRrbnXUEiC7Gkj3_ZxDiPy_ne75jq26UDugp7FgIWOjMgsYia01WzVhGz_Ch_u-Ox4L9rthZAX0pu5vVQGfvNsnI_WZciPElRvb6kqy-HFbNgSMTm_E4LKmX3mcRU9JSgp4zAhRNKee-19yj9L-j6NgrwUGdGeFE7uxuQ2VK5SF"/>
+</div>
+<div>
+<p class="text-body-md font-semibold text-primary">Cedar Lake Chalet</p>
+<p class="text-label-sm text-on-surface-variant">6 Guests â€¢ 3 Bed â€¢ 2 Bath</p>
+</div>
+</div>
+</td>
+<td class="py-4 text-body-md text-on-surface-variant">Lake Tahoe, CA</td>
+<td class="py-4 text-center">
+<span class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-on-tertiary-fixed rounded-full text-label-sm">Maintenance</span>
+</td>
+<td class="py-4 font-semibold text-primary">$450 / night</td>
+<td class="py-4 text-right pr-4 rounded-r-xl">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error-container/20 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 flex justify-center">
+<button class="text-label-md text-primary font-semibold hover:underline flex items-center gap-1">
+                            View All Properties
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

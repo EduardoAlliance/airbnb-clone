@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#757870",
+                        "inverse-surface": "#2f312f",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#2d1505",
+                        "outline-variant": "#c5c8be",
+                        "primary": "#182413",
+                        "on-primary-fixed-variant": "#3d4b36",
+                        "surface-dim": "#dbdad7",
+                        "tertiary": "#421000",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d8e7cc",
+                        "on-tertiary-container": "#e0896a",
+                        "surface-container-high": "#e9e8e5",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdbc7",
+                        "primary-fixed-dim": "#bccbb1",
+                        "surface-tint": "#54624d",
+                        "secondary-fixed-dim": "#eabda2",
+                        "primary-container": "#2d3a27",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#bccbb1",
+                        "secondary-container": "#ffd1b5",
+                        "on-surface-variant": "#444841",
+                        "on-surface": "#1a1c1a",
+                        "tertiary-container": "#5f240d",
+                        "on-background": "#1a1c1a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-primary-container": "#95a48b",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#7a5742",
+                        "surface-container": "#efeeeb",
+                        "surface-variant": "#e3e2e0",
+                        "background": "#faf9f6",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-bright": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#795741",
+                        "on-primary-fixed": "#131f0e",
+                        "on-tertiary-fixed-variant": "#74331b",
+                        "on-secondary-fixed-variant": "#5f402b",
+                        "surface": "#faf9f6",
+                        "inverse-on-surface": "#f2f1ee"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Noto Serif"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Noto Serif"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f6;
+            color: #1a1c1a;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen p-unit space-y-2 bg-surface-container-low border-r border-outline-variant w-64 flex-shrink-0">
+<div class="px-unit py-gutter mb-unit">
+<h1 class="text-label-md font-display-lg text-primary">Evergreen Management</h1>
+<p class="text-on-surface-variant font-body-md text-label-sm">Admin Portal</p>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">house</span>
+<span class="font-body-md text-body-md">Properties</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-body-md text-body-md">Reservations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="pt-unit border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                Add New Cabin
+            </button>
+</div>
+<div class="flex items-center gap-3 p-unit mt-unit">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden border border-outline-variant">
+<img alt="Admin User Avatar" data-alt="A professional headshot of a middle-aged man with a friendly expression, wearing a high-quality forest green linen shirt. The background is a softly blurred modern wooden cabin interior with warm, natural sunlight filtering through large windows. The lighting is bright and clean, consistent with a high-end hospitality management aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9nHpDqeagudOIw-ggeVZj_YOTv1nBOueev58kJnOzQw4CJeIowaiHs4hJS7a4qDiQ89khLVZ_7Gqlpuaqf98ewP53exqQnaybKT_FuzjGj7rrxmwNvkikVHr5LTE1uTF9MspkgdHK1DTA0wR6tF0VKMyBGlR-3je8Rl2anfZ55p4eQgQsCdnPvCbmke_HmWhNVrSvFd5JLSvromiNOt0KSM1YPyYGSzE95Dtt69bHkX0WYGrFUH_YUu-6nx--xaoOf6guG89ytp_b"/>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Alex Thorne</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">System Admin</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-grow h-screen overflow-y-auto bg-background px-margin-mobile md:px-margin-desktop py-gutter">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">Dashboard Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome back. Here is what's happening with Evergreen Retreats today.</p>
+</div>
+<div class="flex items-center gap-unit bg-surface-container-lowest p-2 rounded-xl shadow-sm border border-outline-variant/20">
+<div class="px-4 py-2 border-r border-outline-variant/30 text-center">
+<p class="text-label-sm text-on-surface-variant font-bold">DATE</p>
+<p class="text-body-md font-bold text-primary">Oct 24, 2024</p>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</header>
+<!-- Metric Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12">
+<!-- Total Bookings -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.08)] border border-outline-variant/10 flex flex-col justify-between hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-primary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-primary-fixed">book_online</span>
+</div>
+<span class="text-label-sm font-bold text-on-primary-fixed-variant bg-primary-fixed/30 px-2 py-1 rounded-full">+12.5%</span>
+</div>
+<div class="mt-6">
+<p class="text-label-sm text-on-surface-variant font-medium">Total Bookings</p>
+<h3 class="text-headline-md font-display-lg text-primary">1,284</h3>
+</div>
+</div>
+<!-- Total Revenue -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.08)] border border-outline-variant/10 flex flex-col justify-between hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-secondary-fixed">payments</span>
+</div>
+<span class="text-label-sm font-bold text-on-secondary-fixed-variant bg-secondary-fixed/30 px-2 py-1 rounded-full">+8.2%</span>
+</div>
+<div class="mt-6">
+<p class="text-label-sm text-on-surface-variant font-medium">Total Revenue</p>
+<h3 class="text-headline-md font-display-lg text-primary">$412,850</h3>
+</div>
+</div>
+<!-- Pending Cancellations -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.08)] border border-outline-variant/10 flex flex-col justify-between hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-tertiary-fixed">event_busy</span>
+</div>
+<span class="text-label-sm font-bold text-on-tertiary-fixed-variant bg-tertiary-fixed/30 px-2 py-1 rounded-full">-2.4%</span>
+</div>
+<div class="mt-6">
+<p class="text-label-sm text-on-surface-variant font-medium">Pending Cancellations</p>
+<h3 class="text-headline-md font-display-lg text-primary">14</h3>
+</div>
+</div>
+<!-- Platform Commissions -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.08)] border border-outline-variant/10 flex flex-col justify-between hover:translate-y-[-2px] transition-transform duration-300">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-primary-fixed rounded-lg">
+<span class="material-symbols-outlined text-on-primary-fixed">account_balance_wallet</span>
+</div>
+<span class="text-label-sm font-bold text-on-primary-fixed-variant bg-primary-fixed/30 px-2 py-1 rounded-full">+15.1%</span>
+</div>
+<div class="mt-6">
+<p class="text-label-sm text-on-surface-variant font-medium">Platform Commissions</p>
+<h3 class="text-headline-md font-display-lg text-primary">$61,927</h3>
+</div>
+</div>
+</section>
+<!-- Main Visual Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Booking Trends Chart Container -->
+<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.05)] border border-outline-variant/10 overflow-hidden">
+<div class="p-gutter border-b border-outline-variant/10 flex justify-between items-center">
+<div>
+<h4 class="font-display-lg text-headline-sm text-primary">Booking Trends</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">Year-over-year growth performance</p>
+</div>
+<select class="bg-surface-container-low border-none rounded-lg font-label-md text-label-md text-primary">
+<option>Last 6 Months</option>
+<option>Last 12 Months</option>
+<option>Current Year</option>
+</select>
+</div>
+<div class="p-gutter h-64 flex items-end gap-4 relative">
+<!-- Simple CSS Chart Representation -->
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary-fixed/40 group-hover:bg-primary-fixed transition-colors rounded-t-lg relative" style="height: 45%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">120</div>
+</div>
+<span class="mt-2 text-label-sm text-on-surface-variant">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary-fixed/40 group-hover:bg-primary-fixed transition-colors rounded-t-lg relative" style="height: 60%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">154</div>
+</div>
+<span class="mt-2 text-label-sm text-on-surface-variant">Jun</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary text-on-primary rounded-t-lg relative" style="height: 85%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-100">210</div>
+</div>
+<span class="mt-2 text-label-sm text-primary font-bold">Jul</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary-fixed/40 group-hover:bg-primary-fixed transition-colors rounded-t-lg relative" style="height: 70%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">182</div>
+</div>
+<span class="mt-2 text-label-sm text-on-surface-variant">Aug</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary-fixed/40 group-hover:bg-primary-fixed transition-colors rounded-t-lg relative" style="height: 55%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">142</div>
+</div>
+<span class="mt-2 text-label-sm text-on-surface-variant">Sep</span>
+</div>
+<div class="flex-1 flex flex-col items-center group">
+<div class="w-full bg-primary-fixed/40 group-hover:bg-primary-fixed transition-colors rounded-t-lg relative" style="height: 75%;">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">195</div>
+</div>
+<span class="mt-2 text-label-sm text-on-surface-variant">Oct</span>
+</div>
+</div>
+</section>
+<!-- Featured Properties Status -->
+<section class="bg-primary text-on-primary rounded-xl shadow-xl overflow-hidden relative p-gutter flex flex-col">
+<div class="relative z-10">
+<h4 class="font-display-lg text-headline-sm mb-2">New Growth Opportunity</h4>
+<p class="font-body-md text-label-md opacity-80 mb-8">The "Nordic Peaks" sector is seeing a 40% surge in traffic this month. Consider launching a seasonal campaign.</p>
+<div class="space-y-4">
+<div class="bg-primary-container/30 border border-outline/20 p-4 rounded-lg flex items-center justify-between">
+<div>
+<p class="text-label-sm opacity-70">Sector Performance</p>
+<p class="font-bold text-body-md">High Demand</p>
+</div>
+<span class="material-symbols-outlined text-on-tertiary-container">trending_up</span>
+</div>
+<div class="bg-primary-container/30 border border-outline/20 p-4 rounded-lg flex items-center justify-between">
+<div>
+<p class="text-label-sm opacity-70">Supply Shortage</p>
+<p class="font-bold text-body-md">8 More Units Needed</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed">warning</span>
+</div>
+</div>
+<button class="mt-auto w-full bg-surface-bright text-primary py-3 rounded-lg font-bold hover:bg-surface-variant transition-colors mt-8">
+                        Generate Sector Report
+                    </button>
+</div>
+<!-- Background texture simulation -->
+<div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="An abstract, top-down topographic map of a mountainous region, rendered in deep forest greens and muted charcoals. The organic lines of the elevation create a sophisticated, high-end texture that evokes nature and geography. The lighting is low and moody, creating a professional and premium background feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyBMM6-oKMwjQn42T_Xx32nuQclsstrqnkoKZ79wRU5FXXqHLKgEMokEBjOPvJXEHbVw8nhe-D5ARvwG6Rv8zJF-Grrxjw_aIpGORwzZyf5VmZFF-vl-gofQpBX4LlkeVOXHOJkhEW2FP5Azj49wOkKFc4tbmqEhlUneA6xaLQJLdTd7HlWrDUlTidxgQKdr_SHWhF1EqqBD-6kc2w0hy8diKXQiy0X3iPJZeAPaq4-QHMyWjBh72ZJCECe8sN1PRJgCi2cVziDSq9"/>
+</div>
+</section>
+</div>
+<!-- Recent Activity Table -->
+<section class="mt-gutter mb-gutter">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgb(24,36,19,0.05)] border border-outline-variant/10 overflow-hidden">
+<div class="p-gutter border-b border-outline-variant/10">
+<h4 class="font-display-lg text-headline-sm text-primary">Recent Reservations</h4>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant text-label-sm uppercase tracking-wider">
+<tr>
+<th class="px-gutter py-4 font-bold">Property</th>
+<th class="px-gutter py-4 font-bold">Guest</th>
+<th class="px-gutter py-4 font-bold">Dates</th>
+<th class="px-gutter py-4 font-bold">Revenue</th>
+<th class="px-gutter py-4 font-bold">Status</th>
+<th class="px-gutter py-4 font-bold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10 font-body-md text-body-md">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A small, modern A-frame cabin surrounded by snow-dusted pine trees at dusk. The warm yellow light from the windows contrasts beautifully with the blue hour atmosphere of the wilderness. The style is clean, sharp, and representative of high-end retreat photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhXrXSmUJbt9p-ZUh_y-pDSVGCEDqlCgHFL1mq8qfleagI02W9d6XTHywHMI4sqYVWM_-OijOCW1RLo89xEce2yjMWtGsV5qHuVa3eU7YiFDGgGdIz60ZKmjBVEFZaYCkbK4dIVVt_5tE-6-IR5uQPw4b-gUEnGxJyzrjhyPQut7YGAbeuUmS5MQxU8X3kSk_BKM3NOJENrWFjR4vsk8l_ls1t79_gBuiBhDPkZ2BSkt5Khcq9N_RI9j2zNtntPzaJJnOVPa3wPvk"/>
+</div>
+<span class="font-semibold text-primary">Whispering Pines</span>
+</td>
+<td class="px-gutter py-4 text-on-surface-variant">Sarah Jenkins</td>
+<td class="px-gutter py-4 text-on-surface-variant">Oct 28 - Nov 02</td>
+<td class="px-gutter py-4 font-bold text-primary">$1,250.00</td>
+<td class="px-gutter py-4">
+<span class="bg-primary-fixed/30 text-on-primary-fixed-variant px-3 py-1 rounded-full text-label-sm font-bold">Confirmed</span>
+</td>
+<td class="px-gutter py-4 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-full">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A luxury log cabin with a large stone fireplace visible through floor-to-ceiling glass walls. The setting is a lush autumn forest with vibrant orange and red leaves. High-end architectural photography style, focusing on the interplay of natural materials and modern design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUqHpS65QZI557TRtheBNzAZJlyPaIVguMI9D9cAMhpILFx1nuAo3BfQA9eLOBXKdfJyOAJdoJzGsWmD3R0So37nDta4dUdxo-0Dz-j6YcL6qlGMEN_7geUxvo-8nK3CMioMGLMiKopoko7KNcei57YjkmSNz4qn76G_Q7NgNVHT_3LBvLAvAFtxO19fca5cQdHz4-igWyOWGAH7Sz3RSi-M09CHoj0xpgoyuncypwNlcRhJVD0effSZ2OJBKEM1Wz2n9OsCpt-yc-"/>
+</div>
+<span class="font-semibold text-primary">The Obsidian Lodge</span>
+</td>
+<td class="px-gutter py-4 text-on-surface-variant">Michael Chen</td>
+<td class="px-gutter py-4 text-on-surface-variant">Nov 05 - Nov 08</td>
+<td class="px-gutter py-4 font-bold text-primary">$2,800.00</td>
+<td class="px-gutter py-4">
+<span class="bg-secondary-fixed/30 text-on-secondary-fixed-variant px-3 py-1 rounded-full text-label-sm font-bold">Pending</span>
+</td>
+<td class="px-gutter py-4 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-full">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-gutter py-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist lakeside cabin with a wooden pier extending into mirror-still water. The lighting is soft morning mist, creating a serene and tranquil atmosphere. The color palette is composed of cool blues, soft greys, and warm natural wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC92r89_MBy_ddbQREXstGDd_b5R3Wial0GXiogLqOLZE5jH6aBF_G9cn5DZPJXP6IiQT558aqE_Y43nYcgJo7_MHXIEAbyZlvK1NRrCsJy12ADHNGOf6S6rSyKL-_xzP4_HjTLoLTCSxe6CyzVyLjI3KKxV2b8GkjUjyyTQPv10a569OiAS30PMGn8R2WZ7gY1rrzbLaoMLwZwnkGrIlZgGxJmj72VpbUW-ELG2Ns22Aeci4VC664Jq9wkrjsPGTzxuuPaaeQPNwBP"/>
+</div>
+<span class="font-semibold text-primary">Mist &amp; Mirror</span>
+</td>
+<td class="px-gutter py-4 text-on-surface-variant">Emma Thompson</td>
+<td class="px-gutter py-4 text-on-surface-variant">Oct 30 - Nov 01</td>
+<td class="px-gutter py-4 font-bold text-primary">$890.00</td>
+<td class="px-gutter py-4">
+<span class="bg-tertiary-fixed/30 text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm font-bold">Cancelled</span>
+</td>
+<td class="px-gutter py-4 text-right">
+<button class="p-2 hover:bg-surface-variant rounded-full">
+<span class="material-symbols-outlined text-outline">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-unit border-t border-outline-variant/10 text-center">
+<button class="text-label-md font-bold text-primary hover:underline py-2">View All Reservations</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation (Bottom) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant/20 px-gutter py-3 flex justify-around items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">house</span>
+<span class="text-[10px]">Cabins</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px]">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px]">Settings</span>
+</a>
+</nav>
+</body></html>

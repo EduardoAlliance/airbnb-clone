@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline": "#757870",
+            "inverse-surface": "#2f312f",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#2d1505",
+            "outline-variant": "#c5c8be",
+            "primary": "#182413",
+            "on-primary-fixed-variant": "#3d4b36",
+            "surface-dim": "#dbdad7",
+            "tertiary": "#421000",
+            "on-error": "#ffffff",
+            "primary-fixed": "#d8e7cc",
+            "on-tertiary-container": "#e0896a",
+            "surface-container-high": "#e9e8e5",
+            "tertiary-fixed-dim": "#ffb59c",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#ffdbc7",
+            "primary-fixed-dim": "#bccbb1",
+            "surface-tint": "#54624d",
+            "secondary-fixed-dim": "#eabda2",
+            "primary-container": "#2d3a27",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#bccbb1",
+            "secondary-container": "#ffd1b5",
+            "on-surface-variant": "#444841",
+            "on-surface": "#1a1c1a",
+            "tertiary-container": "#5f240d",
+            "on-background": "#1a1c1a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#ffdbcf",
+            "surface-container-low": "#f4f3f1",
+            "on-tertiary-fixed": "#390c00",
+            "on-primary-container": "#95a48b",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#7a5742",
+            "surface-container": "#efeeeb",
+            "surface-variant": "#e3e2e0",
+            "background": "#faf9f6",
+            "on-primary": "#ffffff",
+            "surface-container-highest": "#e3e2e0",
+            "surface-bright": "#faf9f6",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#795741",
+            "on-primary-fixed": "#131f0e",
+            "on-tertiary-fixed-variant": "#74331b",
+            "on-secondary-fixed-variant": "#5f402b",
+            "surface": "#faf9f6",
+            "inverse-on-surface": "#f2f1ee"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "8px",
+            "margin-mobile": "20px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "display-lg": ["Noto Serif"],
+            "display-lg-mobile": ["Noto Serif"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Noto Serif"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Noto Serif"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+            "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+            "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-unit">
+<span class="text-headline-sm font-display-lg font-semibold text-primary">Evergreen Retreats</span>
+</div>
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Explore</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">My Bookings</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Notifications</a>
+<div class="flex items-center gap-2 pl-gutter border-l border-outline-variant">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+<span class="font-label-md text-on-surface">Profile</span>
+</div>
+</nav>
+<button class="md:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Checkout Details Column -->
+<div class="flex-1 space-y-12">
+<!-- Back Button & Header -->
+<section>
+<a class="inline-flex items-center text-secondary font-label-md mb-6 hover:translate-x-[-4px] transition-transform" href="#">
+<span class="material-symbols-outlined text-[18px] mr-2">arrow_back</span>
+            Modify Selection
+          </a>
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Complete Your Booking</h1>
+<p class="text-body-lg text-on-surface-variant">Review your stay details and secure your retreat in the wild.</p>
+</section>
+<!-- Payment Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_24px_rgba(24,36,19,0.08)] border border-surface-variant">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-sm text-headline-sm text-primary">Payment Information</h2>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="text-label-sm text-secondary uppercase tracking-widest">Secure Checkout</span>
+</div>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Cardholder Name</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors text-body-md" placeholder="Johnathan Evergreen" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Card Number</label>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors text-body-md" placeholder="0000 0000 0000 0000" type="text"/>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 flex gap-2">
+<span class="material-symbols-outlined text-outline">credit_card</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Expiry Date</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors text-body-md" placeholder="MM/YY" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">CVC</label>
+<input class="w-full bg-transparent border-b border-outline-variant py-3 focus:border-primary focus:ring-0 transition-colors text-body-md" placeholder="***" type="text"/>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-variant">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-label-md text-on-surface-variant group-hover:text-on-surface transition-colors">Save card details for future tranquility</span>
+</label>
+</div>
+<button class="w-full bg-primary text-on-primary py-5 rounded-lg font-label-md text-[18px] shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-3 mt-4" type="button">
+              Proceed to Payment
+              <span class="material-symbols-outlined">lock</span>
+</button>
+<p class="text-center text-label-sm text-on-surface-variant opacity-70">
+              By clicking "Proceed to Payment", you agree to our <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Cancellation Policy</a>.
+            </p>
+</form>
+</section>
+<!-- Trust Badges -->
+<div class="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-label-sm">PCI Compliant</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">nature</span>
+<span class="font-label-sm">Eco-Certified</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-sm">24/7 Concierge</span>
+</div>
+</div>
+</div>
+<!-- Order Summary Column -->
+<aside class="w-full lg:w-[400px]">
+<div class="sticky top-32 space-y-6">
+<div class="bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/30">
+<!-- Cabin Image -->
+<div class="h-56 relative overflow-hidden">
+<img alt="Evergreen Cabin" class="w-full h-full object-cover" data-alt="A luxurious, modern A-frame timber cabin nestled deep within a misty pine forest at dusk. Warm amber lights glow through floor-to-ceiling glass windows, contrasting against the cool, moody blue of the twilight woods. The architecture features dark natural wood and sharp minimalist lines, creating an atmosphere of sophisticated organic comfort and serene isolation. Soft fog drifts between the ancient evergreen trees in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWds_AdcYd59tPZT8xE5mqgYhMDwbmgee8Mn_VsChgCXjtRE8l0vHv7US0MUuoM1MZNlEoaouvIAG-8c8Q-iKiseEfBvuPbqzLG8JT5SGfjHLwjeObpWZW2rmE3BhRmQVOg46KsiruwHmlsmNAaV6TD9l24tCPgAK_co9S4GmO3adKsFMS2M2abzTRfVD03rAyBdPtDdn05BJbQOCWYkHhuCQom3QE-b0QdGRquSY_vB4WLhBv1tYuuXEfqa04zy_oN0MjGlSEf8ai"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-label-sm text-primary">
+                Rare Find: High Demand
+              </div>
+</div>
+<!-- Summary Text -->
+<div class="p-8">
+<h3 class="font-headline-md text-headline-sm text-primary mb-2">The Whispering Fir Cabin</h3>
+<div class="flex items-center gap-2 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-body-md">Olympic National Forest, WA</span>
+</div>
+<div class="space-y-4 py-6 border-y border-outline-variant/30">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant uppercase">Check-in</span>
+<span class="font-label-md text-primary">Oct 12, 2024</span>
+</div>
+<span class="material-symbols-outlined text-outline">east</span>
+<div class="flex flex-col text-right">
+<span class="text-label-sm text-on-surface-variant uppercase">Check-out</span>
+<span class="font-label-md text-primary">Oct 15, 2024</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<span class="material-symbols-outlined text-secondary">group</span>
+<span class="text-body-md">2 Guests Â· 3 Nights</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="pt-6 space-y-4">
+<h4 class="font-label-md text-primary">Price Breakdown</h4>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span>$350.00 x 3 nights</span>
+<span>$1,050.00</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span class="flex items-center gap-1">Cleaning fee <span class="material-symbols-outlined text-[16px]">info</span></span>
+<span>$120.00</span>
+</div>
+<div class="flex justify-between text-body-md text-on-surface-variant">
+<span class="flex items-center gap-1">Service fee <span class="material-symbols-outlined text-[16px]">info</span></span>
+<span>$85.00</span>
+</div>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-headline-sm text-headline-sm text-primary">Total (USD)</span>
+<span class="font-headline-sm text-headline-sm text-primary">$1,255.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Refund Policy Card -->
+<div class="bg-primary-container text-on-primary-container p-6 rounded-xl border border-primary/20">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined">event_busy</span>
+<div>
+<p class="font-label-md mb-1">Flexible Cancellation</p>
+<p class="text-label-sm opacity-80">Full refund if you cancel by Oct 10. We understand nature can be unpredictable.</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Section -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max mx-auto">
+<div class="flex flex-col mb-8 md:mb-0">
+<span class="font-display-lg text-headline-sm text-primary mb-2">Evergreen Retreats</span>
+<span class="font-body-md text-label-sm text-on-surface-variant">Â© 2024 Evergreen Retreats. All rights reserved.</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-gutter text-label-sm text-on-surface-variant">
+<a class="hover:text-secondary transition-colors" href="#">About Us</a>
+<a class="hover:text-secondary transition-colors" href="#">Sustainability</a>
+<a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-secondary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+</body></html>

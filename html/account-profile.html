@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#390c00",
+                    "on-primary-fixed": "#131f0e",
+                    "primary-fixed": "#d8e7cc",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dbdad7",
+                    "on-primary-container": "#95a48b",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#7a5742",
+                    "surface-container-low": "#f4f3f1",
+                    "on-background": "#1a1c1a",
+                    "surface": "#faf9f6",
+                    "secondary": "#795741",
+                    "on-secondary": "#ffffff",
+                    " antics-error": "#ba1a1a",
+                    "outline-variant": "#c5c8be",
+                    "on-tertiary-container": "#e0896a",
+                    "inverse-on-surface": "#f2f1ee",
+                    "background": "#faf9f6",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#2d1505",
+                    "tertiary": "#421000",
+                    "on-secondary-fixed-variant": "#5f402b",
+                    "on-primary-fixed-variant": "#3d4b36",
+                    "primary-container": "#2d3a27",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "surface-variant": "#e3e2e0",
+                    "primary": "#182413",
+                    "secondary-fixed": "#ffdbc7",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#2f312f",
+                    "inverse-primary": "#bccbb1",
+                    "on-surface-variant": "#444841",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5f240d",
+                    "primary-fixed-dim": "#bccbb1",
+                    "outline": "#757870",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#efeeeb",
+                    "secondary-container": "#ffd1b5",
+                    "surface-tint": "#54624d",
+                    "surface-bright": "#faf9f6",
+                    "on-tertiary-fixed-variant": "#74331b",
+                    "on-surface": "#1a1c1a",
+                    "secondary-fixed-dim": "#eabda2",
+                    "surface-container-high": "#e9e8e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Noto Serif"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Noto Serif"],
+                    "display-lg": ["Noto Serif"],
+                    "headline-sm": ["Noto Serif"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(24, 36, 19, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<span class="text-headline-sm font-display-lg font-semibold text-primary dark:text-primary-fixed">Evergreen Retreats</span>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">My Bookings</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Notifications</a>
+</nav>
+</div>
+<div class="flex items-center gap-gutter">
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Profile</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Logout</a>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Side Navigation (Settings Categories) -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<nav class="flex flex-col space-y-2">
+<a class="bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-lg font-bold flex items-center gap-3 px-4 py-3 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile Information</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container/20 rounded-lg flex items-center gap-3 px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-label-md text-label-md">Security</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container/20 rounded-lg flex items-center gap-3 px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Payment Methods</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-variant dark:hover:bg-primary-container/20 rounded-lg flex items-center gap-3 px-4 py-3 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+</nav>
+<div class="mt-gutter p-gutter bg-surface-container-low rounded-xl border border-outline-variant/30">
+<p class="text-label-sm font-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Member Since</p>
+<p class="text-body-md font-body-md text-primary font-semibold">October 2023</p>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-grow space-y-gutter">
+<!-- Profile Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h1 class="text-headline-md font-headline-md text-primary mb-1">Profile Information</h1>
+<p class="text-body-md text-on-surface-variant">Update your personal details and how others see you.</p>
+</div>
+</div>
+<div class="space-y-8">
+<!-- Avatar Upload -->
+<div class="flex flex-col md:flex-row items-center gap-gutter pb-8 border-b border-outline-variant/20">
+<div class="relative w-32 h-32">
+<img alt="Profile Avatar" class="w-full h-full rounded-full object-cover border-4 border-surface shadow-md" data-alt="A professional headshot of a person with a warm, friendly expression, set against a softly blurred background of a sunlit pine forest. The lighting is natural and high-key, emphasizing a clean and high-end aesthetic that matches the tranquil atmosphere of a luxury retreat. The color palette is dominated by soft greens and warm wood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq1D9Cq4OxVScl5CjfNTdDppYua5UMkxGEMkty13efc1ddEGQfBIzR4bQgFcMLtmG5hW-ajQq5JazvsH0NDEQ7tJDEN7uPjTIlZguSuYWfr8JuetxdgHe44u1FRYFr0Bl3iGEP4iJJmYcVNxdPYGMhjRTTjilg8nyUqS3NT2a40lhwRaKTtnsRw_EjZ4-KXuzPD1ZP0vZni_WiLIXECdXPcDvL99BscDEOxJ6YkqXhTOBybkQwckvVd7ei_71vNPZrXJrmB21oZafT"/>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+<div class="text-center md:text-left">
+<h3 class="font-label-md text-label-md text-primary mb-1">Profile Picture</h3>
+<p class="text-label-sm text-on-surface-variant max-w-xs">JPG, GIF or PNG. Max size of 800K.</p>
+<div class="mt-4 flex gap-2">
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-label-md font-label-md hover:opacity-90 transition-opacity">Upload New</button>
+<button class="px-4 py-2 border border-secondary text-secondary rounded-lg text-label-md font-label-md hover:bg-secondary/5 transition-colors">Remove</button>
+</div>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Full Name</label>
+<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-2 text-body-md font-body-md text-on-surface" type="text" value="Julian Forest"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Email Address</label>
+<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-2 text-body-md font-body-md text-on-surface" type="email" value="julian.forest@example.com"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Phone Number</label>
+<input class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-2 text-body-md font-body-md text-on-surface" type="tel" value="+1 (555) 123-4567"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Preferred Language</label>
+<select class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-2 text-body-md font-body-md text-on-surface">
+<option>English (US)</option>
+<option>French</option>
+<option>German</option>
+</select>
+</div>
+<div class="md:col-span-2 flex flex-col gap-2">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Bio</label>
+<textarea class="bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-primary px-0 py-2 text-body-md font-body-md text-on-surface resize-none" rows="3">An avid nature lover and part-time landscape photographer. I'm always looking for the quietest cabins with the best sunrise views.</textarea>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-xl text-body-md font-semibold hover:scale-105 active:scale-95 transition-all shadow-lg">Save Changes</button>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10">
+<h2 class="text-headline-sm font-headline-sm text-primary mb-6">Security</h2>
+<div class="space-y-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 py-4 border-b border-outline-variant/10">
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Change Password</h4>
+<p class="text-label-md text-on-surface-variant">It's a good idea to use a strong password that you don't use elsewhere.</p>
+</div>
+<button class="px-4 py-2 border border-secondary text-secondary rounded-lg text-label-md font-label-md hover:bg-secondary/5 transition-colors">Update Password</button>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 py-4 border-b border-outline-variant/10">
+<div class="flex gap-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-full h-fit">
+<span class="material-symbols-outlined" data-icon="phonelink_lock">phonelink_lock</span>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Two-factor Authentication</h4>
+<p class="text-label-md text-on-surface-variant">Add an extra layer of security to your account.</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-md text-on-surface-variant">Disabled</span>
+<button class="w-12 h-6 bg-outline-variant rounded-full relative transition-colors">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Methods Section -->
+<section class="bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/10">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-headline-sm font-headline-sm text-primary">Payment Methods</h2>
+<button class="flex items-center gap-2 text-secondary font-label-md hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            Add New Method
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="p- gutter border border-outline-variant/30 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="bg-surface-variant p-2 rounded">
+<span class="material-symbols-outlined text-secondary" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Visa ending in 4242</p>
+<p class="text-label-sm text-on-surface-variant">Expires 12/26</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="p-gutter border border-outline-variant/30 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<div class="bg-surface-variant p-2 rounded">
+<span class="material-symbols-outlined text-secondary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Mastercard ending in 8812</p>
+<p class="text-label-sm text-on-surface-variant">Expires 05/25</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max mx-auto mt-20">
+<span class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed mb-4 md:mb-0">Evergreen Retreats</span>
+<div class="flex flex-wrap justify-center gap-gutter mb-6 md:mb-0">
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+</div>
+<p class="text-on-surface-variant dark:text-outline-variant font-body-md text-label-sm">Â© 2024 Evergreen Retreats. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

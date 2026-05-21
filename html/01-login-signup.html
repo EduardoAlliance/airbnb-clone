@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Evergreen Retreats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#757870",
+                      "inverse-surface": "#2f312f",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#2d1505",
+                      "outline-variant": "#c5c8be",
+                      "primary": "#182413",
+                      "on-primary-fixed-variant": "#3d4b36",
+                      "surface-dim": "#dbdad7",
+                      "tertiary": "#421000",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#d8e7cc",
+                      "on-tertiary-container": "#e0896a",
+                      "surface-container-high": "#e9e8e5",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#ffdbc7",
+                      "primary-fixed-dim": "#bccbb1",
+                      "surface-tint": "#54624d",
+                      "secondary-fixed-dim": "#eabda2",
+                      "primary-container": "#2d3a27",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#bccbb1",
+                      "secondary-container": "#ffd1b5",
+                      "on-surface-variant": "#444841",
+                      "on-surface": "#1a1c1a",
+                      "tertiary-container": "#5f240d",
+                      "on-background": "#1a1c1a",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#ffdbcf",
+                      "surface-container-low": "#f4f3f1",
+                      "on-tertiary-fixed": "#390c00",
+                      "on-primary-container": "#95a48b",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#7a5742",
+                      "surface-container": "#efeeeb",
+                      "surface-variant": "#e3e2e0",
+                      "background": "#faf9f6",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e3e2e0",
+                      "surface-bright": "#faf9f6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#795741",
+                      "on-primary-fixed": "#131f0e",
+                      "on-tertiary-fixed-variant": "#74331b",
+                      "on-secondary-fixed-variant": "#5f402b",
+                      "surface": "#faf9f6",
+                      "inverse-on-surface": "#f2f1ee"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Noto Serif"],
+                      "display-lg-mobile": ["Noto Serif"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-sm": ["Noto Serif"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Noto Serif"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f6;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<main class="min-h-screen flex flex-col md:flex-row">
+<!-- Visual Brand Side -->
+<section class="hidden md:flex md:w-1/2 lg:w-3/5 relative overflow-hidden bg-primary items-center justify-center p-margin-desktop">
+<div class="absolute inset-0 z-0">
+<img alt="Evergreen Forest" class="w-full h-full object-cover opacity-60" data-alt="A cinematic, high-resolution photograph of a dense, misty evergreen forest at dawn. Soft, ethereal sunlight filters through tall pine trees and ancient ferns, creating long shadows and a serene, mystical atmosphere. The color palette is dominated by deep forest greens, earthy moss tones, and cool morning grays, reflecting the Evergreen Retreats brand identity of refined natural luxury. The mood is tranquil, breathable, and deeply connected to the untamed wilderness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5j-yk2deuQkoShLqnYoGMZMdrXcciO-6-9lnYs0NojiUWqREAbRMUn14r6IUduh5dSwpT3YZUGUfAR84VsgSs41rSAU_3cXDIl0whtbeK6xWievWjYq4Nz-jLy6lZYzO7LGUeZVOB50yGteSIw6EE1aVk7YXSFdUQjnOpgBr5OOlgqmKjWalegzs4A48jtDoamRcTdnX9lEcoXTqVXOL8COEtlg3L_OGGaS_HffaEMoKD18FAb3YxJp4ihn1u2CJxtJRhs-MxNP1n"/>
+</div>
+<div class="relative z-10 text-white max-w-lg">
+<h1 class="font-display-lg text-display-lg mb-gutter text-on-primary">The Great Indoors awaits.</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed opacity-90 leading-relaxed mb-10">Experience the intersection of wild nature and sophisticated comfort. Your sanctuary in the wilderness is just a few steps away.</p>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="cabin">cabin</span>
+<h3 class="font-headline-sm text-headline-sm text-surface-bright">Curated Cabins</h3>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="filter_vintage">filter_vintage</span>
+<h3 class="font-headline-sm text-headline-sm text-surface-bright">Nature Focused</h3>
+</div>
+</div>
+</div>
+<!-- Overlay Texture -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-primary/80 to-transparent"></div>
+</section>
+<!-- Form Side -->
+<section class="flex-1 flex flex-col justify-center px-margin-mobile md:px-margin-desktop bg-surface py-12">
+<div class="max-w-md w-full mx-auto">
+<!-- Brand Anchor -->
+<div class="mb-10 text-center md:text-left">
+<span class="font-display-lg text-headline-sm font-semibold text-primary">Evergreen Retreats</span>
+</div>
+<!-- Toggle Selector -->
+<div class="flex p-1 bg-surface-container-low rounded-xl mb-10">
+<button class="flex-1 py-2 font-label-md text-label-md rounded-lg bg-surface shadow-sm text-primary transition-all">Sign up</button>
+<button class="flex-1 py-2 font-label-md text-label-md rounded-lg text-on-surface-variant hover:text-primary transition-all">Login</button>
+</div>
+<header class="mb-8">
+<h2 class="font-display-lg text-headline-md text-primary mb-2">Create an account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Join our community of wilderness explorers.</p>
+</header>
+<!-- Social Login -->
+<button class="w-full flex items-center justify-center gap-3 py-3 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors duration-200 mb-8">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAySIgl2LWj18Nh9Y0W8tDoboKK2dSJLHYzOwt1HK3Nmoa7ohGUCkn4ZRVyXvdxZVRrvv8R_NncX54sCqJCqoINfmoZWfBxSuaVekgnR6q8Kw_1i7WnkaLzFlJYdtw_ef38X0skAjZu2nEDv1jOGoNBZQp-IBB32t6pY9AObO1odZ_ia2Z9WIPyA_Btzk_bWEWXsenLxtYprnSrww_h_fbkrZpqBs6JWBYsTdwkaRjeylL0SzuEylOqCOREJBoLQ7Mz7Dsl9cCie0Ln"/>
+                    Sign up with Google
+                </button>
+<div class="relative flex items-center mb-8">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-4 font-label-sm text-label-sm text-outline">OR</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Signup Form -->
+<form class="space-y-6">
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-secondary" for="email">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary font-body-md transition-all placeholder:text-outline-variant" id="email" name="email" placeholder="hello@wilderness.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="block font-label-sm text-label-sm text-secondary" for="password">Password</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary font-body-md transition-all placeholder:text-outline-variant" id="password" name="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" type="password"/>
+</div>
+<div class="pt-4">
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl active:scale-[0.98] transition-all" type="submit">
+                            Create Account
+                        </button>
+</div>
+</form>
+<p class="mt-8 text-center font-label-sm text-label-sm text-on-surface-variant">
+                    By signing up, you agree to our 
+                    <a class="text-primary underline decoration-outline-variant hover:decoration-primary transition-all" href="#">Terms of Service</a> 
+                    and 
+                    <a class="text-primary underline decoration-outline-variant hover:decoration-primary transition-all" href="#">Privacy Policy</a>.
+                </p>
+<!-- Admin Link -->
+<div class="mt-12 pt-8 border-t border-surface-container-high text-center">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="admin_panel_settings">admin_panel_settings</span>
+                        Login as Admin
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Segment for Legal Links -->
+<footer class="bg-surface-container-highest py-gutter px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Â© 2024 Evergreen Retreats. All rights reserved.</span>
+<nav class="flex gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "surface": "#faf9f6",
+                        "on-primary-fixed-variant": "#3d4b36",
+                        "background": "#faf9f6",
+                        "secondary-fixed": "#ffdbc7",
+                        "surface-dim": "#dbdad7",
+                        "surface-container": "#efeeeb",
+                        "on-surface-variant": "#444841",
+                        "surface-variant": "#e3e2e0",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface-container-high": "#e9e8e5",
+                        "inverse-primary": "#bccbb1",
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c5c8be",
+                        "tertiary-container": "#5f240d",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c1a",
+                        "on-secondary-fixed-variant": "#5f402b",
+                        "tertiary": "#421000",
+                        "surface-tint": "#54624d",
+                        "on-tertiary-fixed": "#390c00",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#bccbb1",
+                        "primary": "#182413",
+                        "outline": "#757870",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#74331b",
+                        "secondary-fixed-dim": "#eabda2",
+                        "secondary-container": "#ffd1b5",
+                        "primary-fixed": "#d8e7cc",
+                        "primary-container": "#2d3a27",
+                        "on-surface": "#1a1c1a",
+                        "surface-bright": "#faf9f6",
+                        "secondary": "#795741",
+                        "on-tertiary-container": "#e0896a",
+                        "on-secondary-fixed": "#2d1505",
+                        "tertiary-fixed": "#ffdbcf",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-secondary-container": "#7a5742",
+                        "on-primary-fixed": "#131f0e",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#95a48b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Noto Serif"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Noto Serif"],
+                        "display-lg-mobile": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit w-full max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-unit">
+<span class="font-display-lg text-headline-sm font-semibold text-primary dark:text-primary-fixed">Evergreen Retreats</span>
+</div>
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="#">My Bookings</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1" href="#">Notifications</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant">
+<img alt="Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnVceT9-pllRFEW7cy_nB1FlEuODC4S-LsrNwmk4__ypvUMJVCxbAOTwjMQnF_xvnKq-haAOhSRgVYj_PJjqQxc_NKfGdkWcLxhb5LTT6gl-6GaPU8uNRCXInjsttqd9T4n724G6pMQkC9tcSeqTFmzBNLXn2MByeviG8cfqAD3vTebUTJ6y-hfEgUay6Ke0arA9lkWnUPLfbRgT3qyh6LCfz99IlCzg3yEbsV9WMGugZd6sek56LIj1dIjoTuIyDuCe0SOgNd-sDT"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 min-h-screen">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Notifications</h1>
+<p class="font-body-md text-on-surface-variant max-w-xl">Stay updated with your latest cabin bookings, messages from hosts, and upcoming wilderness adventures.</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label-md hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined text-[20px]">done_all</span>
+                Mark all as read
+            </button>
+</div>
+<!-- Filter Controls -->
+<div class="flex flex-wrap items-center gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md border border-primary-container">All</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-md border border-outline-variant hover:bg-surface-container transition-colors">Bookings</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-md border border-outline-variant hover:bg-surface-container transition-colors">Messages</button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-md border border-outline-variant hover:bg-surface-container transition-colors">System</button>
+</div>
+<!-- Notifications List -->
+<div class="space-y-12">
+<!-- Category: Today -->
+<section>
+<div class="flex items-center gap-4 mb-6">
+<h2 class="font-headline-sm text-secondary">Today</h2>
+<div class="h-[1px] flex-grow bg-outline-variant opacity-30"></div>
+</div>
+<div class="space-y-4">
+<!-- Unread Item -->
+<div class="group relative bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-5">
+<div class="absolute top-6 right-6 w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-primary text-lg">Booking Confirmed</h3>
+<span class="text-label-sm text-outline font-medium uppercase tracking-wider">10:45 AM</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-2">Your stay at <span class="font-semibold text-primary">Whispering Pines Cabin</span> has been confirmed for Oct 12-15.</p>
+<a class="text-label-md text-secondary font-bold hover:underline" href="#">View details</a>
+</div>
+</div>
+<!-- Unread Item -->
+<div class="group relative bg-white border border-outline-variant/30 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-start gap-5">
+<div class="absolute top-6 right-6 w-2 h-2 rounded-full bg-error animate-pulse"></div>
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-primary text-lg">Host Message</h3>
+<span class="text-label-sm text-outline font-medium uppercase tracking-wider">09:12 AM</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-2">"Hello! I've just stocked the firewood for your arrival. Let me know if you need anything else." - Sarah</p>
+<a class="text-label-md text-secondary font-bold hover:underline" href="#">Reply now</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Yesterday -->
+<section>
+<div class="flex items-center gap-4 mb-6">
+<h2 class="font-headline-sm text-secondary">Yesterday</h2>
+<div class="h-[1px] flex-grow bg-outline-variant opacity-30"></div>
+</div>
+<div class="space-y-4">
+<div class="group bg-surface-container-low/50 border border-transparent rounded-xl p-6 hover:bg-white hover:border-outline-variant/30 transition-all duration-300 flex items-start gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-primary text-lg">Payment Received</h3>
+<span class="text-label-sm text-outline font-medium uppercase tracking-wider">04:30 PM</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Transaction for <span class="font-medium text-on-surface">The Mossy Ridge Retreat</span> was successful ($842.00).</p>
+</div>
+</div>
+<div class="group bg-surface-container-low/50 border border-transparent rounded-xl p-6 hover:bg-white hover:border-outline-variant/30 transition-all duration-300 flex items-start gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container/40 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-primary text-lg">Check-in Instructions</h3>
+<span class="text-label-sm text-outline font-medium uppercase tracking-wider">11:15 AM</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-2">Instructions for your upcoming stay are now available. Please review the keycode access.</p>
+<a class="text-label-md text-secondary font-bold hover:underline" href="#">View Guidebook</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Category: Earlier -->
+<section>
+<div class="flex items-center gap-4 mb-6">
+<h2 class="font-headline-sm text-secondary">Earlier</h2>
+<div class="h-[1px] flex-grow bg-outline-variant opacity-30"></div>
+</div>
+<div class="space-y-4">
+<div class="group bg-surface-container-low/50 border border-transparent rounded-xl p-6 hover:bg-white hover:border-outline-variant/30 transition-all duration-300 flex items-start gap-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline-sm text-primary text-lg">Review Request</h3>
+<span class="text-label-sm text-outline font-medium uppercase tracking-wider">SEP 28</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-2">How was your stay at <span class="font-medium text-on-surface">Cedar Hollow</span>? Share your experience with future guests.</p>
+<a class="text-label-md text-secondary font-bold hover:underline" href="#">Write a review</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter w-full max-w-container-max mx-auto mt-20">
+<div class="mb-6 md:mb-0">
+<span class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed">Evergreen Retreats</span>
+<p class="text-label-sm text-on-surface-variant mt-2">© 2024 Evergreen Retreats. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-gutter gap-y-2">
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Sustainability</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-semibold underline" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom NavBar -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface shadow-[0_-2px_10px_rgba(0,0,0,0.05)] px-margin-mobile py-unit z-50 flex justify-around items-center border-t border-outline-variant/20">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-label-md">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-label-md">Bookings</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="text-[10px] font-label-md font-bold">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-md">Profile</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,103 @@
+services:
+  app:
+    build:
+      context: .
+      target: production
+    ports:
+      - "${APP_PORT:-8080}:80"
+    environment:
+      APP_NAME: Airbnb
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_URL: http://localhost:${APP_PORT:-8080}
+      APP_KEY: ${APP_KEY:-base64:ZGV2ZWxvcG1lbnRrZXlmb3Jkb2NrZXJidWlsZG9ubHl5}
+      DB_CONNECTION: mariadb
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: airbnb
+      DB_USERNAME: airbnb
+      DB_PASSWORD: secret
+      REDIS_CLIENT: phpredis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: null
+      CACHE_STORE: redis
+      SESSION_DRIVER: redis
+      QUEUE_CONNECTION: redis
+      FILESYSTEM_DISK: local
+      MEDIA_DISK: public
+      MAIL_MAILER: smtp
+      MAIL_HOST: mailpit
+      MAIL_PORT: 1025
+      MAIL_USERNAME: null
+      MAIL_PASSWORD: null
+      MAIL_ENCRYPTION: null
+      RUN_MIGRATIONS: "true"
+    volumes:
+      - ./storage:/var/www/html/storage
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  queue:
+    build:
+      context: .
+      target: production
+    command: ["queue"]
+    environment:
+      APP_NAME: Airbnb
+      APP_ENV: local
+      APP_DEBUG: "true"
+      APP_KEY: ${APP_KEY:-base64:ZGV2ZWxvcG1lbnRrZXlmb3Jkb2NrZXJidWlsZG9ubHl5}
+      DB_CONNECTION: mariadb
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: airbnb
+      DB_USERNAME: airbnb
+      DB_PASSWORD: secret
+      REDIS_CLIENT: phpredis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CACHE_STORE: redis
+      SESSION_DRIVER: redis
+      QUEUE_CONNECTION: redis
+      FILESYSTEM_DISK: local
+      MEDIA_DISK: public
+      RUN_MIGRATIONS: "false"
+    volumes:
+      - ./storage:/var/www/html/storage
+    depends_on:
+      app:
+        condition: service_started
+
+  mariadb:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: airbnb
+      MARIADB_USER: airbnb
+      MARIADB_PASSWORD: secret
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "${MAILPIT_PORT:-8025}:8025"
+
+volumes:
+  mariadb_data:
+  redis_data:

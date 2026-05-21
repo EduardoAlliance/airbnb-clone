@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\PolicyController as AdminPolicyController;
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CabinController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CabinController::class, 'home'])->name('home');
@@ -69,10 +68,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::get('cancellations', [AdminCancellationController::class, 'index'])->name('cancellations.index');
     });
-
-    // Route::get('products', [ProductController::class, 'index'])->name('products.index');
-    // Route::get('products.create', [ProductController::class, 'create'])->name('products.create');
-    // Route::post('products.store', [ProductController::class, 'store'])->name('products.store');
 });
 
 require __DIR__ . '/settings.php';

@@ -33,9 +33,9 @@ FROM node:22-bookworm AS frontend
 
 WORKDIR /var/www/html
 
-# npm ci (package-lock.json debe estar en sync con package.json)
+# Producción: solo npm (package-lock.json debe estar en sync con package.json)
 COPY package.json package-lock.json docker/npmrc.build ./
-RUN cp docker/npmrc.build .npmrc && npm ci
+RUN cp docker/npmrc.build .npmrc && npm ci --include=optional
 
 COPY --from=vendor /var/www/html/vendor ./vendor
 COPY --from=vendor /var/www/html/resources/js/routes ./resources/js/routes

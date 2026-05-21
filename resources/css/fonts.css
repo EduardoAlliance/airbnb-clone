@@ -1,0 +1,15 @@
+/* Fuentes locales (@fontsource) — sin CDN en build ni runtime */
+
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+
+@import '@fontsource/noto-serif/400.css';
+@import '@fontsource/noto-serif/500.css';
+@import '@fontsource/noto-serif/600.css';
+@import '@fontsource/noto-serif/700.css';

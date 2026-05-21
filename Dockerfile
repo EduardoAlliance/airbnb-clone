@@ -20,22 +20,22 @@ WORKDIR /var/www/html
 # ---- Composer + Wayfinder (required before Vite build) ----
 FROM php-base AS vendor
 
-ENV APP_KEY=base64:ZGV2ZWxvcG1lbnRrZXlmb3Jkb2NrZXJidWlsZG9ubHl5
-
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist
 
 COPY . .
 RUN composer install --no-dev --optimize-autoloader \
-    && php artisan wayfinder:generate --no-interaction
+    && APP_KEY=base64:ZGV2ZWxvcG1lbnRrZXlmb3Jkb2NrZXJidWlsZG9ubHl5 \
+    php artisan wayfinder:generate --no-interaction
 
 # ---- Frontend assets ----
 FROM node:22-bookworm AS frontend
 
 WORKDIR /var/www/html
 
-COPY package.json package-lock.json pnpm-lock.yaml ./
-RUN corepack enable && pnpm install --frozen-lockfile
+# npm ci evita la política minimumReleaseAge de pnpm 10+ en CI/Docker
+COPY package.json package-lock.json ./
+RUN npm ci
 
 COPY --from=vendor /var/www/html/vendor ./vendor
 COPY --from=vendor /var/www/html/resources/js/routes ./resources/js/routes
@@ -46,7 +46,7 @@ COPY vite.config.ts tsconfig.json ./
 COPY resources ./resources
 COPY public ./public
 
-RUN pnpm run build
+RUN npm run build
 
 # ---- Production image ----
 FROM php-base AS production

@@ -40,7 +40,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('cabins/{property:slug}/book', [BookingController::class, 'store'])->name('account.bookings.store');
 
     Route::prefix('admin')->name('admin.')->middleware(['role:admin'])->group(function () {
-            Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
         Route::get('analytics', [AdminAnalyticsController::class, 'index'])->name('analytics');
         Route::get('properties', [AdminPropertyController::class, 'index'])->name('properties.index');
         Route::get('properties/create', [AdminPropertyController::class, 'create'])->name('properties.create');
